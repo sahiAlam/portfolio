@@ -1,0 +1,239 @@
+/* =============================
+ Media Quary code
+============================== */
+
+/* for 1500 px */
+@media (max-width: 95em) {
+  .container {
+    max-width: 130rem;
+    padding: 0 3.2rem;
+  }
+  .navbar_lists {
+    gap: 3.4rem;
+  }
+}
+
+/* for 1200 px */
+@media (max-width: 75em) {
+  html {
+    font-size: 54.25%;
+  }
+  .container {
+    max-width: 110rem;
+  }
+  /* .grid {
+    gap: 4.8rem;
+  } */
+}
+
+@media (max-width: 62em) {
+  html {
+    font-size: 50%;
+  }
+  .navbar_lists li::after {
+    display: none;
+  }
+  .header {
+    position: relative;
+  }
+  .mobile_navbar_btn {
+    display: block;
+    z-index: 9999;
+    border: 0.25rem solid var(--black);
+    color: var(--black);
+  }
+  .mobile_nav_icon {
+    width: 5rem;
+    height: 4rem;
+  }
+  .nav_bar {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: all 0.5s linear;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 999;
+  }
+  .navbar_lists {
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav_bar .navbar_lists .navbar_link:link,
+  .nav_bar .navbar_lists .navbar_link:visited {
+    color: var(--black);
+    font-size: 3rem;
+  }
+
+  .active .nav_bar {
+    transform: translateX(0%);
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .active .mobile_navbar_btn .mobile_nav_icon[name="menu-outline"] {
+    display: none;
+  }
+  .active .mobile_navbar_btn .mobile_nav_icon[name="close-outline"] {
+    display: block;
+  }
+
+  /* Hero section  */
+  .section_hero h1 {
+    line-height: 1.2;
+  }
+
+  /* service section  */
+  .section_services .grid_three_column {
+    grid-template-columns: 1fr 1fr;
+  }
+  .section_services .grid {
+    gap: 6rem;
+  }
+
+  /* Footer section  */
+  .section_footer .grid_four_column {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* for bellow 790 px */
+@media (max-width: 49em) {
+  .container {
+    max-width: 71rem;
+  }
+  /* Hero section  */
+  .section_hero .grid_two_column {
+    grid-template-columns: 1fr;
+  }
+  .section_hero .section_hero_data {
+    align-items: center;
+  }
+  .hero_para {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .section_hero img {
+    width: 70%;
+  }
+
+  /* Bio data section  */
+  .section_bio .grid_two_column {
+    grid-template-columns: 1fr;
+  }
+  .section_bio .bio_image {
+    grid-row: 2;
+    margin-top: 3.2rem;
+  }
+  .section_bio .bio_image img {
+    width: 80%;
+  }
+  /* Portfolio section  */
+  .section_portfilio .grid_three_column {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .section_work_data .grid_four_column {
+    grid-template-columns: 1fr 1fr;
+  }
+  .overlay a {
+    text-transform: capitalize;
+    font-size: 4.2rem;
+  }
+  .section_contact_main {
+    max-width: 60rem;
+  }
+}
+
+/* for bellow 560 px */
+@media (max-width: 35em) {
+  /* .container{
+      max-width: 50rem;
+    } */
+  .section_hero .hero_heading {
+    font-size: 3.7rem;
+    /* margin-top: 1.5rem; */
+  }
+  .header {
+    padding: 0 2.8rem;
+  }
+  .section_portfilio .p_btns {
+    gap: 2.2rem;
+    padding: 1rem;
+  }
+  .section_work_data h2 {
+    font-size: 4rem;
+  }
+
+  /* service section  */
+  .section_services .grid_three_column {
+    grid-template-columns: 1fr;
+  }
+  .section_freelancing .container h2 {
+    font-size: 5rem;
+  }
+  .section_contact_main {
+    max-width: 43rem;
+  }
+  .section_contact_main .grid_two_column {
+    grid-template-columns: 1fr;
+  }
+  .section_contact_main form input[type="submit"] {
+    max-width: 40%;
+    padding: 2rem;
+  }
+  .section_footer .footer_about {
+    grid-column: 1/-1;
+  }
+  .section_footer .footer_address {
+    grid-column: 1/-1;
+  }
+}
+
+/* for bellow 450 px */
+@media (max-width: 29em) {
+  html {
+    font-size: 44%;
+  }
+  .header {
+    padding: 0 2rem;
+  }
+  .section_hero .hero_heading {
+    font-size: 3.8rem;
+    margin-top: 1.5rem;
+  }
+  .btn {
+    padding: 1.4rem 2rem;
+    font-size: 1.5rem;
+  }
+  .section_portfilio .grid_three_column {
+    grid-template-columns: 1fr;
+  }
+  .section_contact_main {
+    max-width: 40rem;
+  }
+  .section_contact_main form input[type="submit"] {
+    max-width: 42%;
+  }
+  .section_work_data .grid_four_column {
+    grid-template-columns: 1fr;
+  }
+  .section_footer .grid_four_column {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* for bellow 285px */
+@media (max-width: 18em) {
+  .section_contact_main {
+    max-width: 35rem;
+  }
+}

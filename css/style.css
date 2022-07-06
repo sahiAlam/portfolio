@@ -1,0 +1,801 @@
+/* -------------------------
+common css code
+--------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+}
+:root {
+  --heading: rgb(0, 10, 45);
+  --para: #777777;
+  --para-tint: #e4e4e4;
+  --white: #fff;
+  --black: #212529;
+  --helper: #8490ff;
+  --bgBlack: rgba(144, 172, 208, 0.2);
+  --helper-tint: #f3f4ff;
+  --bg: rgb(252, 250, 252);
+  --quote: rgb(206, 211, 255);
+  --overlay: rgb(33, 99, 241);
+  --gradient: linear-gradient(0deg, rgb(132 144 255) 0%, rgb(98 189 252) 100%);
+  --gradientSupport: -webkit-linear-gradient(
+    45deg,
+    rgba(102, 39, 202, 0.507) 20%,
+    rgb(98 189 252) 100%
+  );
+  --shadow: 0px 0px 20px 0px rgb(132 144 255 / 20%);
+  --shadowSupport: 0px 15px 20px 0px rgb(132 144 255 / 30%);
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+h1 {
+  color: var(--heading);
+  font-size: 6rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+p {
+  color: var(--para);
+  font-size: 1.7rem;
+  line-height: 1.6;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+
+/* sticky nav bar  */
+.sticky .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999999;
+  background: rgb(255, 253, 253);
+  box-shadow: var(--shadow);
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.sticky .section_hero {
+  margin-top: 8rem;
+}
+.mobile_navbar_btn {
+  display: none;
+  background: transparent;
+  cursor: pointer;
+}
+.mobile_nav_icon[name="close-outline"] {
+  display: none;
+}
+/* -------------------------
+ Reusuable code
+--------------------------- */
+.section {
+  padding: 9rem 0;
+}
+.grid {
+  display: grid;
+  gap: 9rem;
+}
+.grid_two_column {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid_three_column {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid_four_column {
+  grid-template-columns: repeat(4, 1fr);
+}
+.container {
+  max-width: 140rem;
+  margin: 0 auto;
+}
+.btn {
+  padding: 1.6rem 3rem;
+  border: none;
+  text-transform: uppercase;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--helper-tint);
+  background: var(--gradientSupport);
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+.btn:hover,
+.btn:active {
+  box-shadow: var(--shadowSupport);
+}
+.common_heading {
+  font-size: 4.6rem;
+  font-weight: 600;
+  margin-bottom: 6rem;
+  text-transform: capitalize;
+  position: relative;
+}
+.common_heading::before {
+  content: "";
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: var(--helper);
+  border-radius: 50%;
+}
+.common_heading::after {
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 1.5rem;
+  min-width: 20rem;
+  background: var(--helper);
+  display: block;
+  height: 0.3rem;
+}
+
+/*-------------------------- 
+Header section start 
+---------------------------*/
+.header {
+  padding: 0 4.8rem;
+  height: 8rem;
+  background-color: var(--bgSupport);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  /* box-shadow: var(--shadow); */
+}
+.header .logo {
+  height: 4rem;
+}
+.navbar_lists {
+  display: flex;
+  gap: 4rem;
+}
+.navbar_lists li {
+  position: relative;
+}
+.navbar_lists li::after {
+  position: absolute;
+  content: "";
+  display: block;
+  background: var(--helper);
+  height: 0.3rem;
+  width: 0;
+  top: 2.3rem;
+  left: 0;
+}
+.navbar_lists li:hover::after {
+  width: 100%;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+}
+.navbar_link:link,
+.navbar_link:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--black);
+  transition: color 0.4s linear;
+  -webkit-transition: color 0.4s linear;
+  -moz-transition: color 0.4s linear;
+  -o-transition: color 0.4s linear;
+}
+.navbar_link:hover,
+.navbar_link:active {
+  color: var(--helper);
+}
+
+/* -------------------------
+Our main hero section start 
+--------------------------- */
+.section_hero {
+  background: var(--bg);
+}
+.section_hero_data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero_top_data {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--helper);
+}
+.hero_heading {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 6.4rem;
+}
+.hero_para {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  max-width: 60rem;
+}
+.hero_img {
+  max-width: 85%;
+  border-radius: 1.5rem;
+}
+.section_hero_image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* -------------------------
+Our bio section start 
+--------------------------- */
+.bio_image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bio_image img {
+  width: 80%;
+  box-shadow: -2rem -2rem 0 0 var(--helper);
+}
+.bio_data_states {
+  display: flex;
+  padding: 6.4rem 0;
+  flex-direction: column;
+  gap: 3rem;
+}
+.bio_states h3 {
+  margin-bottom: 0.8rem;
+}
+.bio_progress_bar {
+  width: 90%;
+  height: 0.8rem;
+  background-color: var(--para-tint);
+  border-radius: 10rem;
+  position: relative;
+  box-shadow: var(--shadow);
+}
+.bio_progress_bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75%;
+  height: inherit;
+  background: var(--gradientSupport);
+  border-radius: 10rem;
+}
+.bio_progress_bar2::before {
+  width: 95%;
+}
+.bio_progress_bar3::before {
+  width: 90%;
+}
+.bio_progress_bar4::before {
+  width: 85%;
+}
+.bio_progress_bar5::before {
+  width: 70%;
+}
+.bio_progress_bar span {
+  position: absolute;
+  top: 1.8rem;
+  width: 4rem;
+  height: 2rem;
+  background: var(--helper);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  outline: 0;
+  left: 75%;
+}
+.bio_progress_bar span {
+  left: 71%;
+}
+.bio_progress_bar2 span {
+  left: 91%;
+}
+.bio_progress_bar3 span {
+  left: 86%;
+}
+.bio_progress_bar4 span {
+  left: 81%;
+}
+.bio_progress_bar5 span {
+  left: 66%;
+}
+.bio_data_btn .btn {
+  margin-top: 3.5rem;
+}
+/* to create a carate */
+.bio_progress_bar span::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 0.8rem solid var(--helper);
+  border-color: transparent;
+  border-bottom-color: var(--helper);
+  top: -1.6rem;
+}
+
+/* -------------------------
+Our portfolio section start 
+--------------------------- */
+.section_portfilio {
+  background: var(--bg);
+  transition: all 0.7s linear;
+}
+.section_portfilio p {
+  max-width: 60rem;
+}
+.p_btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+  margin: 6.4rem 0;
+}
+
+.portfolio_images {
+  gap: 3.2rem;
+}
+.portfolio_images img {
+  width: 100%;
+  border-radius: 0.7rem;
+  position: relative;
+  overflow: hidden;
+}
+.image_overlay {
+  position: relative;
+  overflow: hidden;
+}
+.image_overlay .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradientSupport);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* opacity: 0; */
+  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  border-radius: 0.7rem;
+}
+.image_overlay:hover > .overlay {
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -o-transform: translateY(0);
+  cursor: pointer;
+}
+.image_overlay .common_heading {
+  margin: 0;
+  color: var(--white);
+}
+.overlay a {
+  text-transform: capitalize;
+}
+.overlay a::before {
+  width: 0;
+  height: 0;
+}
+.overlay a::after {
+  width: 0;
+  height: 0;
+}
+.p_btn_active {
+  transform: translateY(-1rem);
+}
+.p_img_not_active {
+  display: none;
+}
+
+/* -------------------------
+Our counter section start 
+--------------------------- */
+.section_work_data {
+  background: var(--gradientSupport);
+  text-align: center;
+  transition: all 0.7s linear;
+  color: var(--white);
+}
+.counter_number {
+  font-size: 4.8rem;
+}
+.section_work_data p {
+  color: var(--white);
+  text-transform: capitalize;
+}
+
+/* -------------------------
+Our services section start 
+--------------------------- */
+.section_services {
+  background: var(--bg);
+  transition: all 0.7s linear;
+  -webkit-transition: all 0.7s linear;
+  -moz-transition: all 0.7s linear;
+  -o-transition: all 0.7s linear;
+}
+.section_services p {
+  max-width: 60rem;
+}
+.section_services .grid {
+  margin-top: 10rem;
+  row-gap: 10rem;
+}
+.service_box {
+  text-align: center;
+  box-shadow: var(--shadow);
+  border-radius: 0.5rem;
+  padding: 6.4rem 3.4rem;
+  transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+}
+.service_box:hover,
+.service_box:active {
+  transform: translateY(-3rem);
+}
+.service_icon {
+  width: 8rem;
+  height: 8rem;
+  background-color: var(--bgBlack);
+  border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+  padding: 1.4rem 1.8rem;
+  position: relative;
+  color: var(--heading);
+  animation: water_wave 3s linear infinite;
+}
+.service_icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+  background: transparent;
+  border: 1px solid var(--black);
+  animation: water_wave 3s linear infinite;
+}
+@keyframes water_wave {
+  0% {
+    border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+  }
+  50% {
+    border-radius: 3% 97% 15% 85% / 72% 0% 100% 28%;
+  }
+  100% {
+    border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+  }
+}
+.service_box h3 {
+  text-transform: capitalize;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* -------------------------
+Our testimonial section start 
+--------------------------- */
+.swiper {
+  width: 100%;
+  height: 100%;
+  margin-top: 9rem;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.swiper-slide img {
+  /* display: block; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.swiper_client_msg {
+  padding: 5rem 8rem;
+  /* background: var(--white); */
+  border-radius: 1rem;
+  text-align: left;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+.swiper_client_msg::before {
+  content: "";
+  position: absolute;
+  bottom: -10rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5rem solid var(--white);
+  border-color: transparent;
+  border-top-color: var(--helper-tint);
+}
+.swiper_client_msg p::before {
+  content: "\f10d";
+  position: absolute;
+  top: 0;
+  left: 2rem;
+  font-size: 5rem;
+  font-family: "Font Awesome 6 Free";
+  color: var(--quote);
+  font-weight: 900;
+}
+.swiper_client_msg p::after {
+  content: "\f10e";
+  position: absolute;
+  bottom: 0;
+  right: 5rem;
+  font-size: 5rem;
+  font-family: "Font Awesome 6 Free";
+  color: var(--quote);
+  font-weight: 900;
+}
+.swiper_client_data{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+  margin-top: 4rem;
+}
+.client_data_details {
+  text-align: left;
+  text-transform: capitalize;
+}
+.client_data_details h4 {
+  color: var(--black);
+}
+.swiper-slide img {
+  max-width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border: 0.5rem solid var(--helper-tint);
+}
+
+.slick-dots {
+  bottom: -35px;
+}
+
+/* -------------------------
+Our freelancing section start 
+--------------------------- */
+.section_freelancing {
+  background-image: url(../images/freelancing_img.jpeg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+  transition: all 0.7s linear;
+  text-align: center;
+}
+.section_freelancing .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay);
+  opacity: 0.6;
+}
+.section_freelancing .container {
+  position: relative;
+}
+.section_freelancing h2 {
+  font-size: 5.4rem;
+}
+.section_freelancing span {
+  color: #a0f669;
+}
+.section_freelancing h2,
+.section_freelancing p {
+  color: var(--white);
+  margin-bottom: 1.8rem;
+}
+
+/* -------------------------
+Our contact section start 
+--------------------------- */
+.section_contact_main {
+  max-width: 70rem;
+  margin: 8rem auto 0;
+}
+.section_contact_main form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.section_contact_main .grid {
+  gap: 3.2rem;
+}
+.section_contact_main form input,
+.section_contact_main textarea {
+  padding: 1.4rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: 0.1rem solid #c3c3c3;
+  width: 100%;
+  font-size: 1.6rem;
+  resize: none;
+}
+.section_contact_main form input:focus,
+.section_contact_main textarea:focus {
+  border: 0.1rem solid rgb(97, 97, 97);
+}
+.section_contact_main form input::placeholder,
+.section_contact_main textarea::placeholder {
+  opacity: 0.6;
+}
+.section_contact_main form input[type="submit"] {
+  max-width: 30%;
+  border: none;
+  text-transform: uppercase;
+}
+
+/* -------------------------
+Our footer section start 
+--------------------------- */
+.section_footer {
+  background: var(--heading);
+  transition: all 0.7s linear;
+  -webkit-transition: all 0.7s linear;
+  -moz-transition: all 0.7s linear;
+  -o-transition: all 0.7s linear;
+}
+.section_footer h3 {
+  color: var(--white);
+  margin-bottom: 4rem;
+  position: relative;
+}
+.section_footer h3::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: var(--white);
+  height: 1rem;
+  width: 1rem;
+  left: 0;
+  top: 3.2rem;
+  border-radius: 50%;
+}
+.section_footer .container h3::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: var(--white);
+  height: 0.25rem;
+  width: 10rem;
+  left: 1rem;
+  top: 3.7rem;
+}
+.footer_about p {
+  color: #adadad;
+}
+.footer_links ul,
+.footer_services ul,
+.footer_address address {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  justify-content: center;
+}
+.footer_links li,
+.footer_links a,
+.footer_services li,
+.footer_services a {
+  font-size: 1.8rem;
+  color: #adadad;
+  text-transform: capitalize;
+}
+.footer_links span,
+.footer_services span,
+.footer_address span {
+  margin-right: 1rem;
+}
+.footer_address p,
+.footer_address a {
+  color: #adadad;
+  font-style: normal;
+}
+.footer_social_links {
+  margin: 5rem 0;
+  text-align: center;
+  color: #adadad;
+}
+.footer_social_links .icons {
+  width: 4rem;
+  width: 4rem;
+  background: var(--bgBlack);
+  display: inline-block;
+  padding: 1.4rem 1.6rem;
+  position: relative;
+  color: var(--white);
+  animation: water_wave 3s linear infinite;
+  font-size: 3.2rem;
+  margin: 0 0.3rem;
+}
+.footer_credits p {
+  text-align: center;
+  color: #adadad;
+}
+footer a:hover,
+footer:active {
+  color: var(--white);
+}
+
+/* -------------------------
+Our scroll to top button
+--------------------------- */
+.scrollTop-style {
+  position: fixed;
+  right: 2%;
+  bottom: 5%;
+  z-index: 1;
+}
+.scroll-top {
+  width: 4rem;
+  height: 4rem;
+  background: var(--helper);
+  display: inline-block;
+  padding: 1.4rem 1.6rem;
+  color: var(--white);
+  animation: water_wave 3s linear infinite;
+  cursor: pointer;
+  position: relative;
+}
